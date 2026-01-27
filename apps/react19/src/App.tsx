@@ -1,9 +1,12 @@
+import "./App.css";
 import { Button } from "@workspace/ui/components/button";
 
-export default function Page() {
+function App() {
 	return (
-		<div className=''>
+		<>
 			<Button>My Hello Button</Button>
-		</div>
+		</>
 	);
 }
+
+export default App;
