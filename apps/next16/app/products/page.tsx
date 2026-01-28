@@ -8,13 +8,7 @@ export default async function ProductsListing() {
 		<div>
 			<h2>Products Listing</h2>
 			{product?.map((prod) => (
-				<div
-					key={prod.id}
-					style={{
-						border: "1px solid gray",
-						margin: "10px",
-						padding: "10px",
-					}}>
+				<div key={prod.id} className='border border-gray-500 m-2 p-2'>
 					<span className='ml-3'>{prod.id}</span>
 					<span className='ml-3'>{prod.code}</span>
 					<span className='ml-3'>{prod.description}</span>

@@ -1,10 +1,19 @@
+import { getProducts } from "@/app/data/get-products";
 import { getProductById } from "../../data/get-product";
+
+export async function generateStaticParams() {
+	const products = await getProducts();
+	return products.map((product) => ({
+		id: product.id.toString(),
+	}));
+}
 
 export default async function ProductDetail({
 	params,
 }: {
 	params: { id: string };
 }) {
+	"use cache";
 	const { id } = await params;
 	const product = await getProductById(Number(id));
 

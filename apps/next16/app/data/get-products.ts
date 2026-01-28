@@ -1,11 +1,11 @@
 import "server-only";
 
 import prisma from "@/lib/prisma";
-
-// import { requireUser } from "./require-user";
+import { requireUser } from "./require-user";
 
 export async function getProducts() {
-	// await requireUser();
+	"use cache";
+	await requireUser();
 
 	try {
 		const products = await prisma.product.findMany({});
