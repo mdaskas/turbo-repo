@@ -1,0 +1,23 @@
+model Product {
+    id          Int             @id @default(autoincrement())
+    code        String          @unique
+    description String
+    price       Float
+    categoryId  Int
+    category    ProductCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+    createdAt   DateTime        @default(now())
+    updatedAt   DateTime        @updatedAt
+
+    @@map("product")
+}
+
+model ProductCategory {
+    id        Int       @id @default(autoincrement())
+    code      String    @unique
+    name      String
+    createdAt DateTime  @default(now())
+    updatedAt DateTime  @updatedAt
+    products  Product[]
+
+    @@map("product_category")
+}

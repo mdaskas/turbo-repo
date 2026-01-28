@@ -1,0 +1,16 @@
+model Customer {
+    id        Int      @id @default(autoincrement())
+    code      String   @unique
+    name      String
+    address1  String
+    address2  String?
+    city      String
+    state     String
+    zip       String
+    phone     String
+    email     String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("customer")
+}
