@@ -1,0 +1,17 @@
+import "server-only";
+
+import prisma from "@/lib/prisma";
+
+// import { requireUser } from "./require-user";
+
+export async function getProducts() {
+	// await requireUser();
+
+	try {
+		const products = await prisma.product.findMany({});
+		return products;
+	} catch (error) {
+		console.error("Error fetching products:", error);
+		throw new Error("Failed to fetch products.");
+	}
+}

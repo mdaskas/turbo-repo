@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button } from "@workspace/ui/components/button";
+import { Button } from "@repo/ui/components/button";
 
 function App() {
 	return (
